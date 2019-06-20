@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material';
-import { NgModule } from '@angular/core';
+import { MatButtonModule, MatToolbarModule } from '@angular/material';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { environment } from './../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { Routes, RouterModule } from '@angular/router';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,15 +43,21 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+
     AppRoutingModule,
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     MatButtonModule,
-    AngularFirestoreModule
+    MatToolbarModule,
+    MatMenuModule,
+    MatIconModule,
+    AngularFirestoreModule,
+    BrowserAnimationsModule
   ],
   providers: [AfService, AdminGuard, SubscriberGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}
