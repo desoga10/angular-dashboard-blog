@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material';
 import { NgModule } from '@angular/core';
 import { environment } from './../environments/environment';
 import { AngularFireModule } from 'angularfire2';
@@ -44,7 +46,7 @@ const routes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-
+    MatButtonModule,
     AngularFirestoreModule
   ],
   providers: [AfService, AdminGuard, SubscriberGuard],
