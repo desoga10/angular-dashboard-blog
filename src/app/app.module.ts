@@ -9,6 +9,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -55,6 +56,7 @@ const routes: Routes = [
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
+    MatSidenavModule,
     AngularFirestoreModule,
     BrowserAnimationsModule
   ],
