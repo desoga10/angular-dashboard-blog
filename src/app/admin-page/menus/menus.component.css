@@ -1,0 +1,9 @@
+table {
+  width: 100%;
+}
+.title {
+  margin-right: 70px;
+}
+.mat-sort-header-button {
+  padding-right: 70px;
+}
