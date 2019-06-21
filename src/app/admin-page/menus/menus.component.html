@@ -1,20 +1,26 @@
 <div>
+  <span class="spacer"></span>
   <mat-form-field>
     <input matInput placeholder="Title" [(ngModel)]="menuDetails.title" />
   </mat-form-field>
-  <mat-form-field spacer>
+  <span class="spacer"></span>
+  <mat-form-field>
     <input matInput placeholder="URL" [(ngModel)]="menuDetails.url" />
   </mat-form-field>
+  <span class="spacer"></span>
   <button mat-raised-button color="primary" (click)="addMenus()">Add</button>
 </div>
 
-<mat-form-field>
-  <input
-    matInput
-    (keyup)="applyFilter($event.target.value)"
-    placeholder="Filter"
-  />
-</mat-form-field>
+<div>
+  <span class="spacer"></span>
+  <mat-form-field>
+    <input
+      matInput
+      (keyup)="applyFilter($event.target.value)"
+      placeholder="Filter"
+    />
+  </mat-form-field>
+</div>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
   <!-- Position Column -->
@@ -29,7 +35,7 @@
       mat-header-cell
       *matHeaderCellDef
       mat-sort-header
-      style="padding-right: 100px"
+      style="padding-right: 120px"
     >
       Title
     </th>

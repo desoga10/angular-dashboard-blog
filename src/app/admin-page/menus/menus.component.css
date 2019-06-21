@@ -7,3 +7,7 @@ table {
 .mat-sort-header-button {
   padding-right: 70px;
 }
+
+.spacer {
+  padding-left: 15px;
+}
