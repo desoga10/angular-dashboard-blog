@@ -7,6 +7,8 @@ import {
   MatInputModule,
   MatSortModule
 } from '@angular/material';
+import { MatDialogModule } from '@angular/material/dialog';
+
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -22,14 +24,20 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 
+import { ConfirmationDialogComponent } from './shared/confirmation-dialog/confirmation-dialog.component';
+import { EditMenuComponent } from './menus/edit-menu/edit-menu.component';
+
 @NgModule({
   declarations: [
     DashboardComponent,
     AdminPageComponent,
     AppNavbarComponent,
     MenusComponent,
-    PostsComponent
+    PostsComponent,
+    ConfirmationDialogComponent,
+    EditMenuComponent
   ],
+  entryComponents: [ConfirmationDialogComponent, EditMenuComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -41,6 +49,7 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatListModule,
     MatSortModule,
+    MatDialogModule,
     MatPaginatorModule,
     MatTableModule,
     MatFormFieldModule,

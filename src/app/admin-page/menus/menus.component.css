@@ -11,3 +11,11 @@ table {
 .spacer {
   padding-left: 15px;
 }
+
+.mat-column-actions {
+  flex: 0 0 100px;
+}
+
+.matspacer {
+  flex: 0 0 100px;
+}
