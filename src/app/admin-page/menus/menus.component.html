@@ -1,14 +1,16 @@
 <div>
+  <form [formGroup]="menuForm">
   <span class="spacer"></span>
   <mat-form-field>
-    <input matInput placeholder="Title" [(ngModel)]="menuDetails.title" />
+    <input matInput placeholder="Title" formControlName="title" />
   </mat-form-field>
   <span class="spacer"></span>
   <mat-form-field>
-    <input matInput placeholder="URL" [(ngModel)]="menuDetails.url" />
+    <input matInput placeholder="URL" formControlName="url" />
   </mat-form-field>
   <span class="spacer"></span>
-  <button mat-raised-button color="primary" (click)="addMenus()">Add</button>
+  <button mat-raised-button color="primary" (click)="addMenus()" [disabled]="!menuForm.valid">Add</button>
+  </form>
 </div>
 
 <div>

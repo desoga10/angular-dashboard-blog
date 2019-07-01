@@ -23,6 +23,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AdminGuard } from '../app/guards/admin.guard';
 import { SubscriberGuard } from '../app/guards/subscriber.guard';
 import { MenusService } from '../app/service/menus/menus.service';
+import { PostsService } from '../app/service/posts/posts.service';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -61,7 +62,13 @@ const routes: Routes = [
     AngularFirestoreModule,
     BrowserAnimationsModule
   ],
-  providers: [AfService, AdminGuard, SubscriberGuard, MenusService],
+  providers: [
+    AfService,
+    AdminGuard,
+    SubscriberGuard,
+    MenusService,
+    PostsService
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

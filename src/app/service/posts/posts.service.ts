@@ -4,7 +4,8 @@ import { map } from 'rxjs/operators';
 
 export interface Post {
   title: '';
-  url: '';
+  menu_id: '';
+  content: '';
 }
 
 @Injectable({
@@ -37,6 +38,6 @@ export class PostsService {
   }
 
   updatePost(postId, post: Post) {
-    this.afs.doc('post/' + postId).update(post);
+    this.afs.doc('posts/' + postId).update(post);
   }
 }

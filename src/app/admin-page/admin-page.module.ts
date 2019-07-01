@@ -10,6 +10,8 @@ import {
 import { MatDialogModule } from '@angular/material/dialog';
 
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatSelectModule} from '@angular/material/select';
+
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { AdminRoutingModule } from '../admin-page/admin-routing-module';
@@ -22,10 +24,11 @@ import { MenusComponent } from './menus/menus.component';
 import { PostsComponent } from './posts/posts.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ConfirmationDialogComponent } from './shared/confirmation-dialog/confirmation-dialog.component';
 import { EditMenuComponent } from './menus/edit-menu/edit-menu.component';
+import { EditPostComponent } from './posts/edit-post/edit-post.component';
 
 @NgModule({
   declarations: [
@@ -35,9 +38,10 @@ import { EditMenuComponent } from './menus/edit-menu/edit-menu.component';
     MenusComponent,
     PostsComponent,
     ConfirmationDialogComponent,
-    EditMenuComponent
+    EditMenuComponent,
+    EditPostComponent
   ],
-  entryComponents: [ConfirmationDialogComponent, EditMenuComponent],
+  entryComponents: [ConfirmationDialogComponent, EditMenuComponent, EditPostComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -53,7 +57,9 @@ import { EditMenuComponent } from './menus/edit-menu/edit-menu.component';
     MatPaginatorModule,
     MatTableModule,
     MatFormFieldModule,
-    FormsModule
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

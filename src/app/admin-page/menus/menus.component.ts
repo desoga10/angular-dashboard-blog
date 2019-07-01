@@ -3,6 +3,12 @@ import { MenusService, Menu } from '../../service/menus/menus.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder
+} from '@angular/forms';
 
 import {
   MatDialog,
@@ -21,6 +27,8 @@ export class MenusComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
+  menuForm: FormGroup;
+
   menuDetails: Menu = {
     title: '',
     url: ''
@@ -28,7 +36,13 @@ export class MenusComponent implements OnInit {
   dataSource = new MatTableDataSource();
   displayedColumns = ['id', 'title', 'url', 'actions'];
 
-  constructor(private menus: MenusService, public dialog: MatDialog) {}
+  constructor(private menus: MenusService, public dialog: MatDialog, private fb: FormBuilder) {
+    this.menuForm = this.fb.group({
+      title: ['', Validators.required],
+      url: ['', Validators.required]
+    });
+  }
+
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
@@ -42,7 +56,7 @@ export class MenusComponent implements OnInit {
   }
 
   addMenus() {
-    this.menus.addMenu(this.menuDetails);
+    this.menus.addMenu(this.menuForm.value);
   }
 
   applyFilter(filterValue: string) {
