@@ -13,12 +13,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PagesListComponent } from './pages-list/pages-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AfService } from './providers/af.service';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-
-import { HomePageComponent } from './home-page/home-page.component';
+import { FrontPageModule } from '../app/front-page/front-page-module';
 
 import { AdminGuard } from '../app/guards/admin.guard';
 import { SubscriberGuard } from '../app/guards/subscriber.guard';
@@ -26,26 +24,19 @@ import { MenusService } from '../app/service/menus/menus.service';
 import { PostsService } from '../app/service/posts/posts.service';
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent },
+  {
+    path: '',
+    loadChildren: '../app/front-page/front-page.module#FrontPageModule'
+  },
   { path: 'login', component: LoginPageComponent },
   {
     path: 'admin',
     loadChildren: '../app/admin-page/admin-page.module#AdminPageModule',
     canActivate: [AdminGuard]
-  },
-  {
-    path: 'article',
-    component: PagesListComponent,
-    canActivate: [SubscriberGuard]
   }
 ];
 @NgModule({
-  declarations: [
-    AppComponent,
-    PagesListComponent,
-    LoginPageComponent,
-    HomePageComponent
-  ],
+  declarations: [AppComponent, LoginPageComponent],
   imports: [
     BrowserModule,
 
@@ -60,7 +51,8 @@ const routes: Routes = [
     MatIconModule,
     MatSidenavModule,
     AngularFirestoreModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FrontPageModule
   ],
   providers: [
     AfService,
