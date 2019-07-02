@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PagesListComponent } from '../front-page/pages-list/pages-list.component';
 import { HomePageComponent } from '../front-page/home-page/home-page.component';
 import { FrontPageComponent } from './front-page.component';
-import {PagesComponent} from '../front-page/pages/pages.component';
+import { PagesComponent } from '../front-page/pages/pages.component';
 
 const routes: Routes = [
   {
@@ -11,16 +11,16 @@ const routes: Routes = [
     component: FrontPageComponent,
     children: [
       {
-        path: 'home',
+        path: '',
         component: HomePageComponent
       },
 
       {
-        path: 'article',
+        path: 'home/article',
         component: PagesListComponent
       },
       {
-        path: 'pages/:url',
+        path: 'home/pages/:url',
         component: PagesComponent
       },
       {

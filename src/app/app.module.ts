@@ -25,15 +25,17 @@ import { PostsService } from '../app/service/posts/posts.service';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     loadChildren: '../app/front-page/front-page.module#FrontPageModule'
   },
   { path: 'login', component: LoginPageComponent },
+
   {
     path: 'admin',
     loadChildren: '../app/admin-page/admin-page.module#AdminPageModule',
     canActivate: [AdminGuard]
-  }
+  },
+  { path: '**', redirectTo: 'home' }
 ];
 @NgModule({
   declarations: [AppComponent, LoginPageComponent],

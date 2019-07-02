@@ -17,6 +17,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 
 import { PagesListComponent } from './pages-list/pages-list.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -41,7 +42,8 @@ import { PagesComponent } from './pages/pages.component';
     MatPaginatorModule,
     MatTableModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule
   ],
   declarations: [
     FrontPageComponent,

@@ -23,8 +23,11 @@ import { MatListModule } from '@angular/material/list';
 import { MenusComponent } from './menus/menus.component';
 import { PostsComponent } from './posts/posts.component';
 import { MatTableModule } from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card';
+
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { ConfirmationDialogComponent } from './shared/confirmation-dialog/confirmation-dialog.component';
 import { EditMenuComponent } from './menus/edit-menu/edit-menu.component';
@@ -58,6 +61,7 @@ import { EditPostComponent } from './posts/edit-post/edit-post.component';
     MatTableModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatCardModule,
     FormsModule,
     ReactiveFormsModule
   ],
