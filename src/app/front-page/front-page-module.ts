@@ -19,12 +19,12 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 
-import { PagesListComponent } from './pages-list/pages-list.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { FrontRoutingModule } from './front-routing-module';
-import { FrontPageComponent } from './front-page.component';
+import { PagesListComponent } from '../front-page/pages-list/pages-list.component';
+import { HomePageComponent } from '../front-page/home-page/home-page.component';
+import { FrontRoutingModule } from '../front-page/front-routing-module';
+import { FrontPageComponent } from '../front-page/front-page.component';
 import { NavbarComponent } from '../front-page/navbar/navbar.component';
-import { PagesComponent } from './pages/pages.component';
+import { PagesComponent } from '../front-page/pages/pages.component';
 
 @NgModule({
   imports: [
